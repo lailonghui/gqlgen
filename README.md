@@ -1,5 +1,6 @@
 # gqlgen
 GraphQL的前后端交互
+<<<<<<< HEAD
 
 前端请求方式：
 fetch('http://localhost:8080/query',{
@@ -53,3 +54,5 @@ fetch('http://localhost:8080/query',{
         ]
     }
 }
+=======
+>>>>>>> origin/master
