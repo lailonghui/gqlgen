@@ -33,7 +33,7 @@ type EnterpriseInfo {
     enterprise_license: String!
     enterprise_property: Int!
     legal_person: String!
-
+    legal_person_phone: String!
 
     create_at: Timestamp!
     update_at: Timestamp!
