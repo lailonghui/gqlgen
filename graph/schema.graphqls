@@ -34,6 +34,8 @@ type EnterpriseInfo {
     enterprise_property: Int!
     legal_person: String!
     legal_person_phone: String!
+    agent: String!
+
 
     create_at: Timestamp!
     update_at: Timestamp!
