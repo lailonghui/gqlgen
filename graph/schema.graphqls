@@ -1,0 +1,56 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+scalar Timestamp
+
+type ContactPerson{
+    name: String!
+    mobile: String!
+    telephone: String!
+    email: String!
+}
+
+type Location{
+    province: String!
+    city: String!
+    discrict: String!
+}
+
+type EnterpriseInfo {
+    id: ID!
+    enterprise_id: String!
+    enterprise_code: String!
+    enterprise_name: String!
+    enterprise_level: Int!
+    superior_enterprise: String!
+    remark: String!
+    contactPerson:[ContactPerson!]!
+    address: String!
+    fax_number: String!
+    is_delete: Boolean!
+    location: Location!
+    organization_type: Int!
+    enterprise_license: String!
+    enterprise_property: Int!
+    legal_person: String!
+
+
+    create_at: Timestamp!
+    update_at: Timestamp!
+    delete_at: Timestamp!
+}
+
+
+input newEnterpriseInfo {
+    enterprise_name: String!
+}
+
+type Query {
+    EnterpriseInfoList: [EnterpriseInfo!]!
+}
+
+type Mutation {
+    createEnterpriseInfo(input:newEnterpriseInfo!):EnterpriseInfo!
+}
+
+
