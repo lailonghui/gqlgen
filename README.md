@@ -1,6 +1,6 @@
 # gqlgen
 GraphQL的前后端交互
-<<<<<<< HEAD
+
 
 前端请求方式：
 fetch('http://localhost:8080/query',{
@@ -10,13 +10,13 @@ fetch('http://localhost:8080/query',{
     "operationName": "getEnterpriseList",
     "variables": {},
     "query": `query getEnterpriseList {
-  EnterpriseInfoList {
-    id
-    enterprise_name
-    enterprise_id
-  }
-}
-`
+              EnterpriseInfoList {
+                id
+                enterprise_name
+                enterprise_id
+              }
+            }
+        `
 })
 }).then(res => res.json()).then(res => {
     console.log(res)
@@ -54,5 +54,4 @@ fetch('http://localhost:8080/query',{
         ]
     }
 }
-=======
->>>>>>> origin/master
+

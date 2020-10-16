@@ -16,6 +16,7 @@ func (r *mutationResolver) CreateEnterpriseInfo(ctx context.Context, input model
 }
 
 func (r *queryResolver) EnterpriseInfoList(ctx context.Context) ([]*model.EnterpriseInfo, error) {
+
 	panic(fmt.Errorf("not implemented"))
 }
 
