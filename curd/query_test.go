@@ -19,7 +19,8 @@ func init() {
 }
 
 func TestGetEnterpriseList(t *testing.T) {
-	obj, err := q.GetEnterpriseList()
+
+	obj, err := q.GetEnterpriseList([]string{"id"})
 	if err != nil {
 		fmt.Printf("GetLabelList() failed,err:%v\n", obj)
 		return

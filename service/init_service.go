@@ -20,5 +20,9 @@ func InitTables() {
 		pg.CreateTable(&model.EnterpriseInfo{})
 	}
 
-	pg.AutoMigrate(&model.EnterpriseInfo{})
+	if !pg.HasTable(&model.VehicleLocationLatest{}) {
+		pg.CreateTable(&model.VehicleLocationLatest{})
+	}
+
+	pg.AutoMigrate(&model.EnterpriseInfo{}, &model.VehicleLocationLatest{})
 }

@@ -24,7 +24,7 @@ func (q *Query) Init() {
 	q.db = q.db.Debug()
 }
 
-func (q *Query) GetEnterpriseList() (obj []*model.EnterpriseInfo, err error) {
-	err = q.db.Order("create_at asc").Find(&obj).Error
+func (q *Query) GetEnterpriseList(fieldNames []string) (obj []*model.EnterpriseInfo, err error) {
+	err = q.db.Select(fieldNames).Find(&obj).Error
 	return
 }

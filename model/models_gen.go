@@ -30,3 +30,7 @@ type EnterpriseInfo struct {
 type NewEnterpriseInfo struct {
 	EnterpriseName string `json:"enterprise_name"`
 }
+
+func (EnterpriseInfo) TableName() string {
+	return "enterprise_info"
+}

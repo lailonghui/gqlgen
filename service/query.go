@@ -20,8 +20,8 @@ func init() {
 }
 
 //获取所有的企业信息列表
-func GetEnterpriseList() (enterpriseList []*model.EnterpriseInfo, err error) {
-	enterpriseList, err = query.GetEnterpriseList()
+func GetEnterpriseList(fieldNames []string) (enterpriseList []*model.EnterpriseInfo, err error) {
+	enterpriseList, err = query.GetEnterpriseList(fieldNames)
 	if err != nil {
 		fmt.Printf("create.CreateEnterpriseInfo() failed,err:%v\n", err)
 		return

@@ -21,7 +21,7 @@ func (c *Create) Init() {
 	var con db.Connect
 	c.db = con.GetConnection()
 	//开启debug模式
-	c.db = c.db.Debug()
+	//c.db = c.db.Debug()
 }
 
 //新增企业信息

@@ -6,6 +6,8 @@ package graph
 import (
 	"context"
 	"fmt"
+	"github.com/99designs/gqlgen/graphql"
+	"lai.com/GraphQL_Server/service"
 
 	"lai.com/GraphQL_Server/graph/generated"
 	"lai.com/GraphQL_Server/model"
@@ -16,8 +18,16 @@ func (r *mutationResolver) CreateEnterpriseInfo(ctx context.Context, input model
 }
 
 func (r *queryResolver) EnterpriseInfoList(ctx context.Context) ([]*model.EnterpriseInfo, error) {
-
-	panic(fmt.Errorf("not implemented"))
+	//operationContext := graphql.GetOperationContext(ctx)
+	//fmt.Println(operationContext.OperationName)
+	//graphql.CollectFieldsCtx() 可以获取到查询的字段
+	fieldsCtx := graphql.CollectFieldsCtx(ctx, nil)
+	var fieldNames []string
+	for _, v := range fieldsCtx {
+		fieldNames = append(fieldNames, v.Name)
+	}
+	enterpriseList, err := service.GetEnterpriseList(fieldNames)
+	return enterpriseList, err
 }
 
 // Mutation returns generated.MutationResolver implementation.
