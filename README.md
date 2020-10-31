@@ -1,28 +1,31 @@
 # gqlgen
-GraphQL的前后端交互
+GraphQL的前后端交互:
 
+##### 1.请求示例 Request Example
 
-前端请求方式：
-fetch('http://localhost:8080/query',{
-    method:'post',
-   headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-    "operationName": "getEnterpriseList",
-    "variables": {},
-    "query": `query getEnterpriseList {
-              EnterpriseInfoList {
-                id
-                enterprise_name
-                enterprise_id
-              }
-            }
-        `
-})
-}).then(res => res.json()).then(res => {
-    console.log(res)
-})
+```js
 
-返回数据:
+ fetch("http://localhost:8080/query?account_id=1&access_token=1",{ 
+    "method":"POST", 
+    "headers": {"Content-Type": "application/json"}, 
+    "body": JSON.stringify({ 
+         "query": `
+            query getDistrictVehicleList {
+  	            DistrictVehicleList(page:1,num:10,sort:"newest"){
+  			        district_name,
+                     business_scope_info_list: {
+					 business_scope,
+					 number
+                     }
+		        }
+            } 
+        ` }) 
+}).then(res => res.json()).then(res => console.log(res))
+```
+
+##### 2. 成功返回结果示例 Success Response
+
+```json
 {
     "data": {
         "EnterpriseInfoList": [
@@ -41,17 +44,13 @@ fetch('http://localhost:8080/query',{
                 "enterprise_name": "小灰灰科技有限公司",
                 "enterprise_id": "bu36vhp6a63onj5l4l40"
             },
-            {
-                "id": 2419493307836007435,
-                "enterprise_name": "阿里巴巴",
-                "enterprise_id": ""
-            },
-            {
-                "id": 2419494486435431436,
-                "enterprise_name": "腾讯",
-                "enterprise_id": "bu371o16a63nes7iuegg"
-            }
+          
         ]
     }
 }
+
+
+
+```
+
 
