@@ -7,7 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"lai.com/GraphQL_Server/graph"
 	"lai.com/GraphQL_Server/graph/generated"
-	"lai.com/GraphQL_Server/service"
 	"log"
 	"net/http"
 	"os"
@@ -18,7 +17,7 @@ const defaultPort = "8080"
 
 func init() {
 	//初始化数据表
-	service.InitTables()
+	//service.InitTables()
 }
 
 func main() {

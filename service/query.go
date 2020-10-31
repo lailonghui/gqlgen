@@ -10,7 +10,7 @@ package service
 import (
 	"fmt"
 	"lai.com/GraphQL_Server/curd"
-	"lai.com/GraphQL_Server/model"
+	"lai.com/GraphQL_Server/graph/model"
 )
 
 var query curd.Query

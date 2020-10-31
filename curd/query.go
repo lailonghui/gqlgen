@@ -10,7 +10,7 @@ package curd
 import (
 	"github.com/jinzhu/gorm"
 	"lai.com/GraphQL_Server/db"
-	"lai.com/GraphQL_Server/model"
+	"lai.com/GraphQL_Server/graph/model"
 )
 
 type Query struct {

@@ -9,7 +9,7 @@ package service
 
 import (
 	"lai.com/GraphQL_Server/db"
-	"lai.com/GraphQL_Server/model"
+	"lai.com/GraphQL_Server/graph/model"
 )
 
 //初始化数据表
@@ -20,9 +20,9 @@ func InitTables() {
 		pg.CreateTable(&model.EnterpriseInfo{})
 	}
 
-	if !pg.HasTable(&model.VehicleLocationLatest{}) {
+	/*if !pg.HasTable(&model.VehicleLocationLatest{}) {
 		pg.CreateTable(&model.VehicleLocationLatest{})
-	}
+	}*/
 
 	pg.AutoMigrate(&model.EnterpriseInfo{}, &model.VehicleLocationLatest{})
 }

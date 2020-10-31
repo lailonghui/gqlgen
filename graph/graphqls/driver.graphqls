@@ -1,0 +1,10 @@
+
+"驾驶员信息(暂把数据表中所有信息列出，实际使用时根据具体业务和安全性选择要返回的信息)"
+type DriverInfo {
+    "主键id"
+    id: ID!
+    "驾驶员外部编码,由golang程序生成的xid，暴露到外部使用"
+    driver_id: String!
+    "所在企业id"
+    enterprise_id: String!
+}

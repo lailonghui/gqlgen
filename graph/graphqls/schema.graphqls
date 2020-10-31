@@ -1,0 +1,24 @@
+
+scalar Time
+#不加!生成的结构体为指针类型
+"默认输入"
+input DefaultInput {
+    "页码"
+    page: Int!
+    "每页返回的记录数"
+    num: Int!
+    "排序方式，'oldest'和'newest'，默认为'newest'"
+    sort: String!
+}
+
+type Query {
+    "获取县区管辖的车辆经营范围信息"
+    DistrictVehicleList(input:DefaultInput): [DistrictVehicle!]!
+    "获取车辆相关信息"
+    VehicleInfoList(input:DefaultInput): [VehicleInfo!]!
+}
+
+type Mutation {
+    "创建车辆相关信息"
+    createVehicleInfo(input:NewVehicleInfo!):VehicleInfo!
+}

@@ -10,7 +10,7 @@ package curd
 import (
 	"github.com/jinzhu/gorm"
 	"lai.com/GraphQL_Server/db"
-	"lai.com/GraphQL_Server/model"
+	"lai.com/GraphQL_Server/graph/model"
 )
 
 type Create struct {
@@ -27,5 +27,11 @@ func (c *Create) Init() {
 //新增企业信息
 func (c *Create) CreateEnterpriseInfo(obj *model.EnterpriseInfo) (err error) {
 	err = c.db.Create(obj).Error
+	return
+}
+
+//新增最新位置信息
+func (c *Create) CreateLocationLatest(obj model.VehicleLocationLatest) (err error) {
+	err = c.db.Create(&obj).Error
 	return
 }
