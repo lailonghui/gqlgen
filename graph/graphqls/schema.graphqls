@@ -11,14 +11,41 @@ input DefaultInput {
     sort: String!
 }
 
+"经营范围的车辆或驾驶员数量"
+type BusinessScopeInfo {
+    "经营范围"
+    business_scope: String!
+    "车辆数量"
+    number: Int!
+}
+
+"所在县区管辖的车辆信息"
+type DistrictVehicle{
+    "所在县区名称"
+    district_name: String!
+    "所在县区的经营范围的车辆或驾驶员的数量信息"
+    business_scope_info_list:[BusinessScopeInfo!]!
+}
+
+
+
 type Query {
-    "获取县区管辖的车辆经营范围信息"
+    "获取县区管辖的经营范围的车辆数量"
     DistrictVehicleList(input:DefaultInput): [DistrictVehicle!]!
     "获取车辆相关信息"
     VehicleInfoList(input:DefaultInput): [VehicleInfo!]!
+
+    "获取县区管辖的经营范围的驾驶员数量"
+    DistrictDriverLists(input:DefaultInput): [DistrictVehicle!]!
+    "获取驾驶员信息"
+    DriverInfoList(input:DefaultInput): [DriverInfo!]!
+
 }
 
 type Mutation {
     "创建车辆相关信息"
     createVehicleInfo(input:NewVehicleInfo!):VehicleInfo!
+
+    "创建驾驶员相关信息"
+    createDriverInfo(input:NewDriverInfo!):DriverInfo!
 }

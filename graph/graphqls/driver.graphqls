@@ -1,4 +1,5 @@
 
+
 "驾驶员信息(暂把数据表中所有信息列出，实际使用时根据具体业务和安全性选择要返回的信息)"
 type DriverInfo {
     "主键id"
@@ -7,4 +8,171 @@ type DriverInfo {
     driver_id: String!
     "所在企业id"
     enterprise_id: String!
+    "所在部门id"
+    department_id: String!
+    "驾驶员身份验证信息ID"
+    driver_identity_id: String!
+    "驾驶员姓名"
+    driver_name: String!
+    "手机号码"
+    telephone: String!
+    "性别"
+    sex: Int!
+    "档案编号(后6位)"
+    files_number: String!
+    "联系地址"
+    contact_address: String!
+    "邮寄地址"
+    mailing_address: String!
+    "是否提交"
+    is_submit: Boolean!
+    "提交内容"
+    submit_content: String!
+    "提交时间"
+    submit_at: Time!
+    "提交人"
+    submit_by: String!
+    "是否手动录入"
+    is_manual_input: Boolean!
+    "是否录入"
+    is_input: Boolean!
+    "录入时间"
+    input_at: Time!
+    "录入人"
+    input_by: String!
+    "是否校验数据"
+    is_check_data: Boolean!
+    "检验时间"
+    check_at: Time!
+    "校验人"
+    check_by: String!
+    "驾驶员信息同步内网反馈信息"
+    remark_in: String!
+    "内网更新时间"
+    update_time_in: Time!
+    "是否通过短信验证"
+    is_check_sms: Boolean!
+    "是否黑名单"
+    is_black: Boolean!
+    "创建时间"
+    create_at: Time!
+    "创建人"
+    create_by: String!
+    "修改时间"
+    update_at: Time!
+    "修改人"
+    update_by: String!
+    "删除时间"
+    delete_at: Time
+    "删除人"
+    delete_by: String!
+    "是否删除"
+    is_delete: Boolean!
+    "备注"
+    remarks: String
+
+}
+
+"驾驶员身份验证信息(暂把数据表中所有信息列出，实际使用时根据具体业务和安全性选择要返回的信息)"
+type DriverIdentity {
+    "主键id"
+    id: ID!
+    "由golang程序生成的xid，暴露到外部使用"
+    identity_id: String!
+    "身份证号码"
+    id_card_num: String!
+    "身份证出生日期"
+    id_card_birthday: Time!
+    "身份证签发机关"
+    id_card_sign_government: String!
+    "身份证民族"
+    id_card_nation: String!
+    "身份证有效起始日期"
+    id_card_start_date: Time!
+    "身份证有效截止日期"
+    id_card_end_date: Time!
+    "身份证正面照，云存储地址"
+    id_card_front_pic: String!
+    "身份证背面照，云存储地址"
+    id_card_back_pic: String!
+    "身份证住址"
+    id_card_address: String!
+    "驾驶员手持身份证照片,云储存系统返回的路径"
+    driver_holding_id_photo: String!
+    "驾驶员的正面照,云储存系统返回的路径"
+    driver_photo: String!
+    "驾驶员签名,云储存系统返回的路径"
+    driver_signature: String!
+    "从业资格证号码"
+    occupational_number: String!
+    "从业资格证有效期至"
+    occupational_expire_date: Time!
+    "从业资格证发证机构"
+    occupational_issuing_authority: String
+    "劳动合同,云储存系统返回的完整劳动合同的图片路径"
+    labor_contract: [String!]!
+    "驾驶员驾驶证,云储存系统返回的路径"
+    driver_license_pic: String!
+    "驾驶证发证机关"
+    driver_license_issuing_authority: String!
+    "年审日期（六合一）"
+    annual_review_date: Time!
+    "换证日期（六合一）"
+    renewal_date: Time!
+    "累计积分（六合一）"
+    accumulatived_points: Float!
+    "清分日期（六合一）"
+    sorting_date: Time!
+    "准驾车型（六合一）"
+    quasi_driving_models: Int!
+    "驾驶证发证所在地的省份ID"
+    driver_license_province_id: String!
+    "驾驶证发证所在地的城市ID"
+    driver_license_city_id: String!
+    "驾驶证发证所在地的区域ID"
+    driver_license_district_id: String!
+    "驾驶证状态"
+    driver_license_status: Int!
+    "驾驶证初次领证日期"
+    driver_license_issue_date: Time!
+    "是否删除"
+    is_delete: Boolean!
+    "创建时间"
+    create_at: Time!
+    "创建人"
+    create_by: String!
+    "修改时间"
+    update_at: Time!
+    "修改人"
+    update_by: String!
+    "删除时间"
+    delete_at: Time
+    "删除人"
+    delete_by: String!
+
+}
+
+
+
+
+"驾驶员信息的输入(具体输入信息待确认)"
+input NewDriverInfo {
+    "所在企业id"
+    enterprise_id: String!
+    "所在部门id"
+    department_id: String!
+    "驾驶员身份验证信息ID"
+    driver_identity_id: String!
+    "驾驶员姓名"
+    driver_name: String!
+    "手机号码"
+    telephone: String!
+    "性别"
+    sex: Int!
+    "档案编号(后6位)"
+    files_number: String!
+    "联系地址"
+    contact_address: String!
+    "邮寄地址"
+    mailing_address: String!
 }

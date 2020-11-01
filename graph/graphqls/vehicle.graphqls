@@ -1,18 +1,4 @@
-"车辆经营范围信息"
-type BusinessScopeInfo {
-    "经营范围"
-    business_scope: String!
-    "车辆数量"
-    number: Int!
-}
 
-"所在县区管辖的车辆信息"
-type DistrictVehicle{
-    "所在县区名称"
-    district_name: String!
-    "所在县区的所有经营范围的车辆信息"
-    business_scope_info_list:[BusinessScopeInfo!]!
-}
 
 "车辆维保数据"
 type VehicleMaintenance {
@@ -127,7 +113,7 @@ type VehicleInfo {
     "修改人"
     update_by: String!
     "删除时间"
-    delete_at: Time!
+    delete_at: Time
     "删除人"
     delete_by: String!
 }
