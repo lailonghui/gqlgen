@@ -7,53 +7,53 @@ type DriverInfo {
     "驾驶员外部编码,由golang程序生成的xid，暴露到外部使用"
     driver_id: String!
     "所在企业id"
-    enterprise_id: String!
+    enterprise_id: String
     "所在部门id"
-    department_id: String!
+    department_id: String
     "驾驶员身份验证信息ID"
-    driver_identity_id: String!
+    driver_identity_id: String
     "驾驶员姓名"
-    driver_name: String!
+    driver_name: String
     "手机号码"
-    telephone: String!
+    telephone: String
     "性别"
     sex: Int!
     "档案编号(后6位)"
-    files_number: String!
+    files_number: String
     "联系地址"
-    contact_address: String!
+    contact_address: String
     "邮寄地址"
-    mailing_address: String!
+    mailing_address: String
     "是否提交"
-    is_submit: Boolean!
+    is_submit: Boolean
     "提交内容"
-    submit_content: String!
+    submit_content: String
     "提交时间"
-    submit_at: Time!
+    submit_at: Time
     "提交人"
-    submit_by: String!
+    submit_by: String
     "是否手动录入"
-    is_manual_input: Boolean!
+    is_manual_input: Boolean
     "是否录入"
-    is_input: Boolean!
+    is_input: Boolean
     "录入时间"
-    input_at: Time!
+    input_at: Time
     "录入人"
-    input_by: String!
+    input_by: String
     "是否校验数据"
-    is_check_data: Boolean!
+    is_check_data: Boolean
     "检验时间"
-    check_at: Time!
+    check_at: Time
     "校验人"
-    check_by: String!
+    check_by: String
     "驾驶员信息同步内网反馈信息"
-    remark_in: String!
+    remark_in: String
     "内网更新时间"
-    update_time_in: Time!
+    update_time_in: Time
     "是否通过短信验证"
-    is_check_sms: Boolean!
+    is_check_sms: Boolean
     "是否黑名单"
-    is_black: Boolean!
+    is_black: Boolean
     "创建时间"
     create_at: Time!
     "创建人"
@@ -65,9 +65,9 @@ type DriverInfo {
     "删除时间"
     delete_at: Time
     "删除人"
-    delete_by: String!
+    delete_by: String
     "是否删除"
-    is_delete: Boolean!
+    is_delete: Boolean
     "备注"
     remarks: String
 
@@ -80,63 +80,63 @@ type DriverIdentity {
     "由golang程序生成的xid，暴露到外部使用"
     identity_id: String!
     "身份证号码"
-    id_card_num: String!
+    id_card_num: String
     "身份证出生日期"
-    id_card_birthday: Time!
+    id_card_birthday: Time
     "身份证签发机关"
-    id_card_sign_government: String!
+    id_card_sign_government: String
     "身份证民族"
-    id_card_nation: String!
+    id_card_nation: String
     "身份证有效起始日期"
-    id_card_start_date: Time!
+    id_card_start_date: Time
     "身份证有效截止日期"
-    id_card_end_date: Time!
+    id_card_end_date: Time
     "身份证正面照，云存储地址"
-    id_card_front_pic: String!
+    id_card_front_pic: String
     "身份证背面照，云存储地址"
-    id_card_back_pic: String!
+    id_card_back_pic: String
     "身份证住址"
-    id_card_address: String!
+    id_card_address: String
     "驾驶员手持身份证照片,云储存系统返回的路径"
-    driver_holding_id_photo: String!
+    driver_holding_id_photo: String
     "驾驶员的正面照,云储存系统返回的路径"
-    driver_photo: String!
+    driver_photo: String
     "驾驶员签名,云储存系统返回的路径"
-    driver_signature: String!
+    driver_signature: String
     "从业资格证号码"
-    occupational_number: String!
+    occupational_number: String
     "从业资格证有效期至"
-    occupational_expire_date: Time!
+    occupational_expire_date: Time
     "从业资格证发证机构"
     occupational_issuing_authority: String
     "劳动合同,云储存系统返回的完整劳动合同的图片路径"
-    labor_contract: [String!]!
+    labor_contract: [String]
     "驾驶员驾驶证,云储存系统返回的路径"
-    driver_license_pic: String!
+    driver_license_pic: String
     "驾驶证发证机关"
-    driver_license_issuing_authority: String!
+    driver_license_issuing_authority: String
     "年审日期（六合一）"
-    annual_review_date: Time!
+    annual_review_date: Time
     "换证日期（六合一）"
-    renewal_date: Time!
+    renewal_date: Time
     "累计积分（六合一）"
-    accumulatived_points: Float!
+    accumulatived_points: Float
     "清分日期（六合一）"
-    sorting_date: Time!
+    sorting_date: Time
     "准驾车型（六合一）"
-    quasi_driving_models: Int!
+    quasi_driving_models: Int
     "驾驶证发证所在地的省份ID"
-    driver_license_province_id: String!
+    driver_license_province_id: String
     "驾驶证发证所在地的城市ID"
-    driver_license_city_id: String!
+    driver_license_city_id: String
     "驾驶证发证所在地的区域ID"
-    driver_license_district_id: String!
+    driver_license_district_id: String
     "驾驶证状态"
-    driver_license_status: Int!
+    driver_license_status: Int
     "驾驶证初次领证日期"
-    driver_license_issue_date: Time!
+    driver_license_issue_date: Time
     "是否删除"
-    is_delete: Boolean!
+    is_delete: Boolean
     "创建时间"
     create_at: Time!
     "创建人"
@@ -148,7 +148,7 @@ type DriverIdentity {
     "删除时间"
     delete_at: Time
     "删除人"
-    delete_by: String!
+    delete_by: String
 }
 
 
@@ -159,15 +159,15 @@ type VehicleDriverBinding {
     "由golang程序生成的xid，暴露到外部使用"
     vehicle_driver_binding_id: String!
     "驾驶员id"
-    driver_id: String!
+    driver_id: String
     "车辆id"
-    vehicle_id: String!
+    vehicle_id: String
     "备注"
-    remarks: String!
+    remarks: String
     "租赁合同,,云储存系统返回的完整租赁合同的图片路径"
-    lease_contract: [String!]!
+    lease_contract: [String]
     "是否删除"
-    is_delete: Boolean!
+    is_delete: Boolean
     "创建时间"
     create_at: Time!
     "创建人"
@@ -179,30 +179,52 @@ type VehicleDriverBinding {
     "删除时间"
     delete_at: Time
     "删除人"
-    delete_by: String!
+    delete_by: String
+
+    "车牌号"
+    license_plate_number: String
+    "车牌颜色"
+    license_plate_color: Int
+    "号牌种类"
+    license_plate_type: Int
+    "驾驶员姓名"
+    driver_name: String
 }
 
-
+input NewVehicleDriverBinding {
+    "车牌号"
+    license_plate_number: String
+    "驾驶员姓名"
+    driver_name: String
+    "租赁合同,,云储存系统返回的完整租赁合同的图片路径"
+    lease_contract: [String]
+    "页码"
+    page: Int!
+    "每页返回的记录数"
+    num: Int!
+    "排序方式，'oldest'和'newest'，默认为'newest'"
+    sort: String
+}
 
 
 "驾驶员信息的输入(具体输入信息待确认)"
 input NewDriverInfo {
     "所在企业id"
-    enterprise_id: String!
+    enterprise_id: String
     "所在部门id"
-    department_id: String!
+    department_id: String
     "驾驶员身份验证信息ID"
-    driver_identity_id: String!
+    driver_identity_id: String
     "驾驶员姓名"
-    driver_name: String!
+    driver_name: String
     "手机号码"
-    telephone: String!
+    telephone: String
     "性别"
     sex: Int!
     "档案编号(后6位)"
-    files_number: String!
+    files_number: String
     "联系地址"
-    contact_address: String!
+    contact_address: String
     "邮寄地址"
-    mailing_address: String!
+    mailing_address: String
 }

@@ -3,9 +3,9 @@
 "车辆维保数据"
 type VehicleMaintenance {
     "维保时间"
-    maintenance_date: Time!
+    maintenance_date: Time
     "维保公里数"
-    maintenance_kilometers: Float!
+    maintenance_kilometers: Float
 }
 
 "车辆信息(暂把数据表中所有信息列出，实际使用时根据具体业务和安全性选择要返回的信息)"
@@ -15,95 +15,95 @@ type VehicleInfo {
     "车辆外部编码,由golang程序生成的xid，暴露到外部使用"
     vehicle_id: String!
     "车牌号"
-    license_plate_number: String!
+    license_plate_number: String
     "车牌颜色"
-    license_plate_color: Int!
+    license_plate_color: Int
     "号牌种类"
-    license_plate_type: Int!
+    license_plate_type: Int
     "所在企业id"
-    enterprise_id: String!
+    enterprise_id: String
     "所在部门id"
-    department_id: String!
+    department_id: String
     "车架号(后6位)"
-    vehicle_identification_number: String!
+    vehicle_identification_number: String
     "道路运输证号"
-    road_transport_license_number: String!
+    road_transport_license_number: String
     "车辆类型"
-    vehicle_type: Int!
+    vehicle_type: Int
     "行业类别"
-    industry_category: Int!
+    industry_category: Int
     "吨位"
-    heavy: Float!
+    heavy: Float
     "座位"
-    seats: Int!
+    seats: Int
     "营运类型"
-    operating_type: Int!
+    operating_type: Int
     "营运线路"
-    operating_route: String!
+    operating_route: String
     "经营范围"
-    business_scope: Int!
+    business_scope: Int
     "机动车管理人"
-    vehicle_manager: String!
+    vehicle_manager: String
     "机动车管理人联系电话"
-    vehicle_manager_phone: String!
+    vehicle_manager_phone: String
     "机动车管理人身份证"
-    vehicle_manager_id_card: String!
+    vehicle_manager_id_card: String
     "机动车所有人（六合一）"
-    owner: String!
+    owner: String
     "检验日期（六合一）"
-    inspection_date: Time!
+    inspection_date: Time
     "报废日期(六合一)"
-    retirement_date: Time!
+    retirement_date: Time
     "使用性质（六合一）"
-    use_nature: String!
+    use_nature: String
     "机动车状态"
-    vehicle_state: Int!
+    vehicle_state: Int
     "内网更新时间"
-    update_time_in: Time!
+    update_time_in: Time
     "车辆信息同步内网反馈信息"
-    remark_in: String!
+    remark_in: String
     "是否完成"
-    is_complete: Boolean!
+    is_complete: Boolean
     "行驶证照片,云储存系统返回的路径"
-    driving_licensee_pic: String!
+    driving_licensee_pic: String
     "是否激活"
-    is_active: Boolean!
+    is_active: Boolean
     "是否录入完成"
-    is_input: Boolean!
+    is_input: Boolean
     "租车标准价格"
-    car_rental_price: Float!
+    car_rental_price: Float
     "投保公司"
-    insurance_company: Int!
+    insurance_company: Int
     "投保日期"
-    insurance_date: Time!
+    insurance_date: Time
     "维保数据数组"
-    vehicle_maintenances: [VehicleMaintenance!]!
+    vehicle_maintenances: [VehicleMaintenance]
     "汽车排量"
-    vehicle_displacement: String!
+    vehicle_displacement: String
     "车辆品牌"
-    vehicle_brand: Int!
+    vehicle_brand: Int
     "准驾车型"
-    quasi_driving_models: Int!
+    quasi_driving_models: Int
     "是否上传省厅"
-    is_upload_province: Boolean!
+    is_upload_province: Boolean
     "营运状态"
-    operating_state: Int!
+    operating_state: Int
     "终端ID"
-    terminal_id: String!
+    terminal_id: String
     "是否申请安装智能终端"
-    is_apply_install_terminal: Boolean!
+    is_apply_install_terminal: Boolean
     "校验状态"
-    check_state: Int!
+    check_state: Int
     "是否导入"
-    is_import: Boolean!
+    is_import: Boolean
     "登记时间"
-    record_at: Time!
+    record_at: Time
     "登记人"
-    record_by: String!
+    record_by: String
     "是否删除"
-    is_delete: Boolean!
+    is_delete: Boolean
     "备注"
-    remarks: String!
+    remarks: String
     "创建时间"
     create_at: Time!
     "创建人"
@@ -115,21 +115,21 @@ type VehicleInfo {
     "删除时间"
     delete_at: Time
     "删除人"
-    delete_by: String!
+    delete_by: String
 }
 
 
 "车辆信息的输入(具体输入信息待确认)"
 input NewVehicleInfo {
     "车牌号"
-    license_plate_number: String!
+    license_plate_number: String
     "车牌颜色"
-    license_plate_color: Int!
+    license_plate_color: Int
     "号牌种类"
-    license_plate_type: Int!
+    license_plate_type: Int
     "所在企业id"
-    enterprise_id: String!
+    enterprise_id: String
     "所在部门id"
-    department_id: String!
+    department_id: String
 }
 

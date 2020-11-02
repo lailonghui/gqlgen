@@ -1,5 +1,6 @@
 scalar Time
-#不加!生成的结构体为指针类型
+scalar Map
+#不加!生成的结构体为指针类型,且可以为空
 "默认输入"
 input DefaultInput {
     "页码"
@@ -7,21 +8,21 @@ input DefaultInput {
     "每页返回的记录数"
     num: Int!
     "排序方式，'oldest'和'newest'，默认为'newest'"
-    sort: String!
+    sort: String
     "报警类型"
-    alarm_type: Int!
+    alarm_type: Int
 }
 
 "经营范围的车辆或驾驶员数量"
 type BusinessScopeInfo {
     "经营范围"
-    business_scope: String!
+    business_scope: String
     "车辆数量"
-    number: Int!
+    number: Int
 }
 
-"所在县区管辖的车辆信息"
-type DistrictVehicle{
+"所在县区管辖的车辆或驾驶员统计信息"
+type DistrictCount{
     "所在县区名称"
     district_name: String!
     "所在县区的经营范围的车辆或驾驶员的数量信息"
@@ -32,25 +33,70 @@ type DistrictVehicle{
 
 type Query {
     "获取县区管辖的经营范围的车辆数量"
-    DistrictVehicleList(input:DefaultInput): [DistrictVehicle!]!
-    "获取车辆相关信息"
-    VehicleInfoList(input:DefaultInput): [VehicleInfo!]!
+    getDistrictVehicleList(input:DefaultInput): [DistrictCount!]!
+    "获取车辆信息"
+    getVehicleInfoList(input:DefaultInput): [VehicleInfo!]!
+
 
     "获取县区管辖的经营范围的驾驶员数量"
-    DistrictDriverList(input:DefaultInput): [DistrictVehicle!]!
+    getDistrictDriverList(input:DefaultInput): [DistrictCount!]!
     "获取驾驶员信息"
-    DriverInfoList(input:DefaultInput): [DriverInfo!]!
+    getDriverInfoList(input:DefaultInput): [DriverInfo!]!
+    "获取车辆与驾驶员绑定关系数据"
+    getVehicleDriverBinding(input: NewVehicleDriverBinding): [VehicleDriverBinding!]!
 
     "获取报警信息"
-    VehicleAlarmDataList(input:DefaultInput): [VehicleAlarmData!]!
+    getVehicleAlarmDataList(input:DefaultInput): [VehicleAlarmData!]!
+
+
+    "获取辖区内交通违法车辆数量"
+    getDistrictVehicleViolationList(input:DefaultInput): [DistrictCount!]!
+    "获取车辆违章明细记录"
+    getVehicleViolationDetailList(input:DefaultInput): [VehicleViolationDetails!]!
+    "获取辖区内车辆交通违法处置率统计"
+    getDistrictVehicleViolationHandleList(input:DefaultInput): [DistrictCount!]!
+    "获取驾驶员交通违法数据"
+    getDriverViolationList(input:DefaultInput): [VehicleViolationDetails!]!
+    "获取驾驶员近3个记分周期违法数据"
+    get
+    "获取车辆交通违法排名数据"
+    get
+    "获取十大类违法种类数据"
+    get
+    "获取驾驶员酒驾毒驾违法统计数据"
+    get
+    "获取四大类重点车辆交通违法清零数据"
+    get
+    "获取企业百车违法率数据"
+    get
+    "获取单车违法数统计"
+    get
+    "获取监管短信日志查询"
+    get
 }
 
 type Mutation {
-    "创建车辆相关信息"
-    createVehicleInfo(input:NewVehicleInfo!):VehicleInfo!
+    "创建车辆信息"
+    createVehicleInfo(input:NewVehicleInfo):VehicleInfo!
+    "修改车辆信息"
+    updateVehicleInfo(input:NewVehicleInfo): VehicleInfo!
+    "删除车辆信息"
+    deleteVehicleInfo(input:NewVehicleInfo): VehicleInfo!
 
-    "创建驾驶员相关信息"
-    createDriverInfo(input:NewDriverInfo!):DriverInfo!
+    "创建驾驶员信息"
+    createDriverInfo(input:NewDriverInfo): DriverInfo!
+    "修改驾驶员信息"
+    updateDriverInfo(input:NewDriverInfo): DriverInfo!
+    "删除驾驶员信息"
+    deleteDriverInfo(input:NewDriverInfo): DriverInfo!
+
+    "创建车辆与驾驶员绑定关系"
+    createVehicleDriverBinding(input:NewVehicleDriverBinding): VehicleDriverBinding!
+    "编辑车辆与驾驶员绑定关系"
+    updateVehicleDriverBinding(input:NewVehicleDriverBinding): VehicleDriverBinding!
+    "解绑车辆与驾驶员"
+    deleteVehicleDriverBinding(input:NewVehicleDriverBinding): VehicleDriverBinding!
+
 
 
 }

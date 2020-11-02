@@ -1,0 +1,321 @@
+
+"车辆违章明细"
+type VehicleViolationDetails {
+    "主键id"
+    id: ID!
+    "外部编码,由golang程序生成的xid，暴露到外部使用"
+    violation_detail_id: String!
+#    "违章车辆id"
+#    vehicle_id: String
+    "违章车辆信息"
+    vehicle_info: VehicleInfo
+#    "违章驾驶员id"
+#    driver_id: String
+    "违章驾驶员信息"
+    driver_info: DriverInfo
+    "所在企业id"
+    enterprise_id: String
+#    "违法代码"
+#    illegal_code: String
+    "违法描述数据"
+    illegal_data: VIO_CODEWFDM
+    "违法时间"
+    illegal_time: Time
+    "违法处理状态"
+    illegal_handling_status: Int
+    "违法地点"
+    illega_location: String
+    "标准值"
+    standard_value: String
+    "实测值"
+    measured_value: String
+    "发现机构"
+    discovery_agency: String
+    "违法照片"
+    illegal_photo: String
+    "是否通知驾驶员"
+    is_notice_driver: Boolean
+    "通知时间"
+    notice_time: Time
+    "决定书号"
+    decision_number: String
+    "缴款标记"
+    payment_mark: String
+    "当事人姓名"
+    party_name: String
+    "信息来源：1，强制，2，非现场，0，简易"
+    information_source: Int
+    "驾驶人处理的交通违法记录对应的机动车信息"
+    vehicle_information: String
+    "内网更新时间"
+    update_time_in: Time
+    "是否处理"
+    is_handle: Boolean
+    "处理人"
+    handle_by: String
+    "处理时间"
+    handle_at: Time
+    "是否发送短信"
+    is_send: Boolean
+    "创建时间"
+    create_at: Time!
+    "创建人"
+    create_by: String!
+    "修改时间"
+    update_at: Time!
+    "修改人"
+    update_by: String!
+    "删除时间"
+    delete_at: Time
+    "删除人"
+    delete_by: String
+}
+
+"车辆违规计分记录"
+type VehicleViolationScoringRecord {
+    "主键id"
+    id: ID!
+    "外部编码,由golang程序生成的xid，暴露到外部使用"
+    violation_scoring_id: String!
+    "扣分车辆id"
+    vehicle_id: String
+#    "扣分明细id"
+#    violation_scoring_item_id: String
+    "扣分明细数据"
+    violation_scoring_item: VehicleViolationScoringItems
+    "扣分分值"
+    demerit_points: Float
+    "备注"
+    remarks: String
+    "是否删除"
+    is_delete: Boolean
+    "创建时间"
+    create_at: Time!
+    "创建人"
+    create_by: String!
+    "修改时间"
+    update_at: Time!
+    "修改人"
+    update_by: String!
+    "删除时间"
+    delete_at: Time
+    "删除人"
+    delete_by: String
+}
+
+"车辆违规计分项表"
+type VehicleViolationScoringItems {
+    "主键id"
+    id: ID!
+    "外部编码,由golang程序生成的xid，暴露到外部使用"
+    violation_scoring_item_id: String!
+    "扣分事项描述"
+    deduction_item_description: String
+    "扣分事项类别"
+    deduction_category: Int
+    "扣分分值"
+    demerit_points: Float
+    "是否删除"
+    is_delete: Boolean
+    "创建时间"
+    create_at: Time!
+    "创建人"
+    create_by: String!
+    "修改时间"
+    update_at: Time!
+    "修改人"
+    update_by: String!
+    "删除时间"
+    delete_at: Time
+    "删除人"
+    delete_by: String
+}
+
+"短信提醒日志表"
+type SmsRemindLog {
+    "主键id"
+    id: ID!
+    "外部编码,由golang程序生成的xid，暴露到外部使用"
+    sms_log_id: String!
+#    "驾驶员id"
+#    driver_id: String
+    "违章驾驶员信息"
+    driver_info: DriverInfo
+    "手机号码"
+    cellphone_number: String
+    "短信内容"
+    sms_content: String
+    "是否发送"
+    is_send: Boolean
+    "短信提醒类型"
+    sms_type: Int
+    "是否删除"
+    is_delete: Boolean
+    "创建时间"
+    create_at: Time!
+    "创建人"
+    create_by: String!
+    "修改时间"
+    update_at: Time!
+    "修改人"
+    update_by: String!
+    "删除时间"
+    delete_at: Time
+    "删除人"
+    delete_by: String
+}
+
+"违法描述字典表"
+type VIO_CODEWFDM {
+    "违法行为"
+    WFXW: String
+    "违法描述"
+    WFMS: String
+    "违法计分数"
+    WFJFS: Float
+    "最小罚款金额"
+    FKJE_MIN: Float
+    "最大罚款金额"
+    FKJE_MAX: Float
+    "序号"
+    XH: String
+}
+
+"区域处理机关交通违法违规登记表"
+type RegionalViolationRegister {
+    "主键id"
+    id: ID!
+    "外部编码,由golang程序生成的xid，暴露到外部使用"
+    regional_violation_register_id: String!
+#    "违法记录表ID"
+#    violation_detail_id: String
+    "违法明细数据"
+    violation_detail: VehicleViolationDetails
+#    "违章车辆id"
+#    vehicle_id: String
+    "违章车辆信息"
+    vehicle_info: VehicleInfo
+#    "驾驶员id"
+#    driver_id: String
+    "违章驾驶员信息"
+    driver_info: DriverInfo
+#    "违法代码"
+#    illegal_code: String
+    "违法描述数据"
+    illegal_data: VIO_CODEWFDM
+    "违法时间"
+    illegal_time: Time
+    "类型(1车辆2驾驶员)"
+    illegal_type: Int
+    "登记时间"
+    register_time: Time
+    "处理机关"
+    processing_agency: String
+    "操作员"
+    operator: String
+    "类型(false未登记true已登记)"
+    is_register: Boolean
+    "是否删除"
+    is_delete: Boolean
+    "创建时间"
+    create_at: Time!
+    "创建人"
+    create_by: String!
+    "修改时间"
+    update_at: Time!
+    "修改人"
+    update_by: String!
+    "删除时间"
+    delete_at: Time
+    "删除人"
+    delete_by: String
+}
+
+"违章争议记录表"
+type DisputeViolationRecord {
+    "主键id"
+    id: ID!
+    "外部编码,由golang程序生成的xid，暴露到外部使用"
+    dispute_violation_id: String!
+#    "违章明细表id"
+#    violation_detail_id: String
+    "违法明细数据"
+    violation_detail: VehicleViolationDetails
+    "书面申请材料"
+    written_application_materials: String
+    "劳动合同或租赁合同"
+    labor_contract: String
+    "行车日志"
+    driving_log: String
+    "证人证言"
+    witness: String
+    "当事人陈述"
+    statement: String
+    "图像证据材料"
+    pic_evidence: String
+    "行为人驾驶证"
+    driver_license: String
+    "机动车行驶证"
+    driving_license: String
+    "行为人身份证"
+    id_card: String
+    "机动车所有人营业执照"
+    business_license: String
+    "机动车所有人组织机构代码证"
+    organization_code: String
+    "法定代表人身份证"
+    legal_person_id_number: String
+    "委托代理人身份证"
+    agent_id_number: String
+    "机动车管理人身份证"
+    vehicle_manager_id_card: String
+    "其他证据材料"
+    other_evidence: [String]
+    "审批状态"
+    approve_state: Int
+    "内网更新时间"
+    update_time_in: Time
+    "联系地址"
+    contact_address: String
+    "是否删除"
+    is_delete: Boolean
+    "创建时间"
+    create_at: Time!
+    "创建人"
+    create_by: String!
+    "修改时间"
+    update_at: Time!
+    "修改人"
+    update_by: String!
+    "删除时间"
+    delete_at: Time
+    "删除人"
+    delete_by: String
+}
+
+"违章争议审批日志表"
+type DisputeViolationRecordLog {
+    "主键id"
+    id: ID!
+    "外部编码,由golang程序生成的xid，暴露到外部使用"
+    dispute_violation_log_id: String!
+#    "违章争议记录表id"
+#    dispute_violation_id: String
+    "违章争议记录表数据"
+    dispute_violation_data: DisputeViolationRecord
+    "审核人"
+    reviewer: String
+    "审核时间"
+    review_time: Time
+    "审核意见"
+    review_opinion: String
+    "审核结果"
+    review_result: String
+    "审核动作名称"
+    review_action_name: String
+    "审批人"
+    approver: String
+    "内网更新时间"
+    update_time_in: Time
+}
+
