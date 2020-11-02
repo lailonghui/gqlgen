@@ -319,3 +319,113 @@ type DisputeViolationRecordLog {
     update_time_in: Time
 }
 
+"周期内违法数据"
+type CycleViolationData {
+    "扣分分值"
+    demerit_points: Float
+    "违法次数"
+    number_of_violation: Int
+    "罚款金额"
+    penalty: Float
+}
+
+"驾驶员近3个记分周期违法数据"
+type DriverThreeScoringCycleData{
+    "违章驾驶员信息"
+    driver_info: DriverInfo
+    "计分周期违法数据"
+    CycleViolationDataList: [CycleViolationData]
+}
+
+"车辆交通违法排名数据"
+type VehicleViolationRankData{
+    "车辆信息"
+    vehicle_info: VehicleInfo
+    "扣分信息"
+    deduction_info: CycleViolationData
+}
+
+"十大类违法种类数据"
+type TenTypeIllegalData{
+    type: String
+    number: Int
+}
+
+"县区的十大类违法种类数据"
+type DistrictTenTypeIllegalData{
+    "所在县区名称"
+    district_name: String
+    "十大类违法种类数据"
+    illegal_data: [TenTypeIllegalData]
+}
+"驾驶员酒驾毒驾违法统计数据"
+type DriverDrinkAndDrugData{
+    "违章驾驶员信息"
+    driver_info: DriverInfo
+    "十大类违法种类数据"
+    illegal_data: [TenTypeIllegalData]
+}
+
+"四大类重点车辆交通违法处理数据"
+type FourTypeKeyVehicleViolation {
+    "违法车辆总数"
+    total: Int
+    "已处理车辆数"
+    handle_number: Int
+    "未处理车辆数"
+    unhandled_number: Int
+    "违法处理率"
+    Illegal_handle_rate: Float
+}
+
+"四大类重点车辆交通违法清零数据"
+type FourTypeKeyVehicleViolationClear {
+    "所在县区名称"
+    district_name: String
+    handle_data: [FourTypeKeyVehicleViolation]
+}
+
+"企业百车违法率数据"
+type IllegalRateOfVehicle{
+    "企业名称"
+    enterprise_name: String
+    "所在县"
+    district_name: String
+    "企业地址"
+    enterprise_address: String
+    "总车辆数"
+    total_number_of_vehicle: Int
+    "违法车辆数"
+    number_of_illegal_vehicle: Int
+    "总违法数"
+    total_number_of_violations: Int
+    "已处理车辆数"
+    handle_number: Int
+    "未处理车辆数"
+    unhandled_number: Int
+    "违法处理率"
+    Illegal_handle_rate: Float
+}
+"单车违法数统计"
+type SingleCarIllegalStatistics{
+    "驾驶员信息"
+    driver_info: DriverInfo
+    "企业名称"
+    enterprise_name: String
+    "所在县"
+    district_name: String
+    "企业地址"
+    enterprise_address: String
+    "总车辆数"
+    total_number_of_vehicle: Int
+    "违法车辆数"
+    number_of_illegal_vehicle: Int
+    "总违法数"
+    total_number_of_violations: Int
+    "已处理车辆数"
+    handle_number: Int
+    "未处理车辆数"
+    unhandled_number: Int
+    "违法处理率"
+    Illegal_handle_rate: Float
+}

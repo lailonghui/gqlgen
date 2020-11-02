@@ -11,6 +11,16 @@ input DefaultInput {
     sort: String
     "报警类型"
     alarm_type: Int
+    "驾驶员姓名"
+    driver_name: String
+    "身份证号码"
+    id_card_num: String
+    "车牌号"
+    license_plate_number: String
+    "车牌颜色"
+    license_plate_color: Int
+    "号牌种类"
+    license_plate_type: Int
 }
 
 "经营范围的车辆或驾驶员数量"
@@ -58,21 +68,21 @@ type Query {
     "获取驾驶员交通违法数据"
     getDriverViolationList(input:DefaultInput): [VehicleViolationDetails!]!
     "获取驾驶员近3个记分周期违法数据"
-    get
+    getDriverThreeScoringCycleData(input:DefaultInput): [DriverThreeScoringCycleData!]!
     "获取车辆交通违法排名数据"
-    get
+    getVehicleViolationRankData(input:DefaultInput): [VehicleViolationRankData!]!
     "获取十大类违法种类数据"
-    get
+    getDistrictTenTypeIllegalData(input:DefaultInput): [DistrictTenTypeIllegalData!]!
     "获取驾驶员酒驾毒驾违法统计数据"
-    get
+    getDriverDrinkAndDrugData(input:DefaultInput): [DriverDrinkAndDrugData!]!
     "获取四大类重点车辆交通违法清零数据"
-    get
+    getFourTypeKeyVehicleViolationClear(input:DefaultInput): [FourTypeKeyVehicleViolationClear!]!
     "获取企业百车违法率数据"
-    get
+    getIllegalRateOfVehicle(input:DefaultInput): [IllegalRateOfVehicle!]!
     "获取单车违法数统计"
-    get
+    getSingleCarIllegalStatistics(input:DefaultInput): [SingleCarIllegalStatistics!]!
     "获取监管短信日志查询"
-    get
+    getSmsRemindLog(input:DefaultInput): [SmsRemindLog!]!
 }
 
 type Mutation {

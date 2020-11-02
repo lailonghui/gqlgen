@@ -10,8 +10,10 @@ type DriverInfo {
     enterprise_id: String
     "所在部门id"
     department_id: String
-    "驾驶员身份验证信息ID"
-    driver_identity_id: String
+#    "驾驶员身份验证信息ID"
+#    driver_identity_id: String
+    "驾驶员身份验证信息"
+    driver_identity: DriverIdentity
     "驾驶员姓名"
     driver_name: String
     "手机号码"
