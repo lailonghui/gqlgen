@@ -1,0 +1,108 @@
+
+"车辆监控图片"
+type VehicleSupervisionPhoto{
+    "主键id"
+    id: ID!
+    "由golang程序生成的xid，暴露到外部使用"
+    supervision_photo_id: String!
+    "车辆ID"
+    vehicle_id: String!
+    "驾驶员id"
+    driver_id: String!
+    "所在企业id"
+    enterprise_id: String!
+    "终端上报时间"
+    update_time: Time!
+    "监控图片地址"
+    monitoring_pic: String!
+    "监控图片上传时间"
+    monitoring_pic_upload_time: Time!
+    "终端IMEI"
+    IMEI: String!
+    "SIM卡号"
+    SIM_number: String!
+}
+
+"经纬度"
+type Point  {
+    "经度"
+    longitude: Float!
+    "纬度"
+    latitude: Float!
+}
+
+"车辆报警信息"
+type VehicleAlarmData{
+    "主键id"
+    id: ID!
+    "由golang程序生成的xid，暴露到外部使用"
+    alarm_data_id: String!
+    "车辆ID"
+    vehicle_id: String!
+    "所属区域ID"
+    pid: String!
+    "车辆速度"
+    speed: Float!
+    "记录时间"
+    record_time: Time!
+    "位置描述"
+    pos_desc: String!
+    "空间数据类型point表示经纬度"
+    coordinate: Point!
+    "行车记录仪速度"
+    driving_speed: Float!
+    "处理状态(1.处理中 2.处理完毕 3.不作处理 4.将来处理)"
+    dealing_status: Int!
+    "处理人"
+    user_id: String!
+    "处理描述"
+    deal_desc: String!
+    "报警类型(001.超速报警 002.疲劳驾驶报警 066.凌晨2点到5点行驶报警)"
+    alarm_type: Int!
+    "报警开始时间"
+    alarm_begin_time: Time!
+    "报警结束时间"
+    alarm_end_time: Time!
+    "车牌号"
+    license_plate_number: String!
+    "车牌颜色"
+    license_plate_color: Int!
+
+}
+
+"车辆终端达标情况"
+type VehicleTerminalStatus{
+    "主键id"
+    id: String!
+    "ACC状态"
+    acc: String!
+    "制动信号(刹车)"
+    brake: String!
+    "左转向灯信号"
+    left_lamp: String!
+    "右转向灯信号"
+    right_lamp: String!
+    "近光灯信号"
+    near_lamp: String!
+    "远光灯信号(大灯)"
+    far_lamp: String!
+    "喇叭信号"
+    loud_speaker: String!
+    "定位状态"
+    locate: String!
+    "前门"
+    front_door: String!
+    "GPS信号"
+    GPS_open: String!
+    "北斗信号"
+    BD_open: String!
+    "摄像头"
+    camera: String!
+    "车速"
+    driving_speed: String!
+    "备注"
+    remarks: String!
+    "记录时间"
+    record_time: Time!
+
+}

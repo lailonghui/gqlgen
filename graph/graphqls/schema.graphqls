@@ -1,4 +1,3 @@
-
 scalar Time
 #不加!生成的结构体为指针类型
 "默认输入"
@@ -9,6 +8,8 @@ input DefaultInput {
     num: Int!
     "排序方式，'oldest'和'newest'，默认为'newest'"
     sort: String!
+    "报警类型"
+    alarm_type: Int!
 }
 
 "经营范围的车辆或驾驶员数量"
@@ -36,10 +37,12 @@ type Query {
     VehicleInfoList(input:DefaultInput): [VehicleInfo!]!
 
     "获取县区管辖的经营范围的驾驶员数量"
-    DistrictDriverLists(input:DefaultInput): [DistrictVehicle!]!
+    DistrictDriverList(input:DefaultInput): [DistrictVehicle!]!
     "获取驾驶员信息"
     DriverInfoList(input:DefaultInput): [DriverInfo!]!
 
+    "获取报警信息"
+    VehicleAlarmDataList(input:DefaultInput): [VehicleAlarmData!]!
 }
 
 type Mutation {
@@ -48,4 +51,6 @@ type Mutation {
 
     "创建驾驶员相关信息"
     createDriverInfo(input:NewDriverInfo!):DriverInfo!
+
+
 }

@@ -1,0 +1,9 @@
+#type Student {
+#    name: String!
+#    age: Int!
+#}
+
+#type Query {
+#   GetStudent: Student!
+#
+#}
