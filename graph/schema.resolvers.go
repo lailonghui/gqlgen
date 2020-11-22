@@ -11,15 +11,71 @@ import (
 	graph "lai.com/GraphQL_Server/graph/model"
 )
 
-func (r *mutationResolver) CreateVehicleInfo(ctx context.Context, input graph.NewVehicleInfo) (*graph.VehicleInfo, error) {
+func (r *mutationResolver) CreateVehicleInfo(ctx context.Context, input *graph.NewVehicleInfo) (*graph.VehicleInfo, error) {
 	panic(fmt.Errorf("not implemented"))
 }
 
-func (r *queryResolver) DistrictVehicleList(ctx context.Context, input *graph.DefaultInput) ([]*graph.DistrictVehicle, error) {
+func (r *mutationResolver) UpdateVehicleInfo(ctx context.Context, input *graph.NewVehicleInfo) (*graph.VehicleInfo, error) {
 	panic(fmt.Errorf("not implemented"))
 }
 
-func (r *queryResolver) VehicleInfoList(ctx context.Context, input *graph.DefaultInput) ([]*graph.VehicleInfo, error) {
+func (r *mutationResolver) DeleteVehicleInfo(ctx context.Context, input *graph.NewVehicleInfo) (*graph.VehicleInfo, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *mutationResolver) CreateDriverInfo(ctx context.Context, input *graph.NewDriverInfo) (*graph.DriverInfo, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *mutationResolver) UpdateDriverInfo(ctx context.Context, input *graph.NewDriverInfo) (*graph.DriverInfo, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *mutationResolver) DeleteDriverInfo(ctx context.Context, input *graph.NewDriverInfo) (*graph.DriverInfo, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *mutationResolver) CreateVehicleDriverBinding(ctx context.Context, input *graph.NewVehicleDriverBinding) (*graph.VehicleDriverBinding, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *mutationResolver) UpdateVehicleDriverBinding(ctx context.Context, input *graph.NewVehicleDriverBinding) (*graph.VehicleDriverBinding, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *mutationResolver) DeleteVehicleDriverBinding(ctx context.Context, input *graph.NewVehicleDriverBinding) (*graph.VehicleDriverBinding, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *queryResolver) GetDistrictVehicleList(ctx context.Context, input *graph.DefaultInput) ([]*graph.DistrictCount, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *queryResolver) GetVehicleInfoList(ctx context.Context, input *graph.DefaultInput) ([]*graph.VehicleInfo, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *queryResolver) GetDistrictDriverList(ctx context.Context, input *graph.DefaultInput) ([]*graph.DistrictCount, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *queryResolver) GetDriverInfoList(ctx context.Context, input *graph.DefaultInput) ([]*graph.DriverInfo, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *queryResolver) GetVehicleDriverBinding(ctx context.Context, input *graph.NewVehicleDriverBinding) ([]*graph.VehicleDriverBinding, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *queryResolver) GetVehicleAlarmDataList(ctx context.Context, input *graph.DefaultInput) ([]*graph.VehicleAlarmData, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *queryResolver) GetDistrictVehicleViolationList(ctx context.Context, input *graph.DefaultInput) ([]*graph.DistrictCount, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *queryResolver) GetVehicleViolatoinDetailList(ctx context.Context, input *graph.DefaultInput) ([]*graph.VehicleViolationDetailsOutput, error) {
 	panic(fmt.Errorf("not implemented"))
 }
 

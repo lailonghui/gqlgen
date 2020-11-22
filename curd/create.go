@@ -27,6 +27,7 @@ func (c *Create) Init() {
 //新增企业信息
 func (c *Create) CreateEnterpriseInfo(obj *model.EnterpriseInfo) (err error) {
 	err = c.db.Create(obj).Error
+	c.db.Delete()
 	return
 }
 

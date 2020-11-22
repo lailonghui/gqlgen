@@ -107,6 +107,4 @@ type Mutation {
     "解绑车辆与驾驶员"
     deleteVehicleDriverBinding(input:NewVehicleDriverBinding): VehicleDriverBinding!
 
-
-
 }
