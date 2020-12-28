@@ -55,6 +55,7 @@ type Query {
     "获取车辆与驾驶员绑定关系数据"
     getVehicleDriverBinding(input: NewVehicleDriverBinding): [VehicleDriverBinding!]!
 
+
     "获取报警信息"
     getVehicleAlarmDataList(input:DefaultInput): [VehicleAlarmData!]!
 
